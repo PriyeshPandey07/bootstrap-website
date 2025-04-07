@@ -1,0 +1,30 @@
+pipeline {
+    agent {
+        label 'agent'
+    }
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git 'https://github.com/PriyeshPandey07/bootstrap-website-.git'
+            }
+        }
+    
+        stage("build image")
+        {
+            steps {
+                script {
+                    sh "docker build -t bootstrapimg ."
+                }
+            }
+        }
+        stage("run image")
+        {
+            steps {
+                script {
+                    sh "docker run -dit --name boot -p 6000:80 bootstrapimg:latest"
+                }
+            }
+        }
+    }
+}
