@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/PriyeshPandey07/bootstrap-website-.git'
+                git 'https://github.com/PriyeshPandey07/bootstrap-website.git', branch: 'main'
             }
         }
     
