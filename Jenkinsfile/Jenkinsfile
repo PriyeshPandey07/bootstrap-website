@@ -14,7 +14,7 @@ pipeline {
         {
             steps {
                 script {
-                    sh "docker build -t bootstrapimg ."
+                    sh "docker build -t bootstrapimg:latest ."
                 }
             }
         }
