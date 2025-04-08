@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git url:'https://github.com/PriyeshPandey07/bootstrap-website.git', branch: 'main'
+                git url:'https://github.com/PriyeshPandey07/bootstrap-website.git', branch: "main"
             }
         }
     
@@ -22,7 +22,7 @@ pipeline {
         {
             steps {
                 script {
-                    sh "docker run -dit --name boot -p 6000:80 bootstrapimg:latest"
+                    sh "docker run -dit --name web -p 6000:80 bootstrapimg:latest"
                 }
             }
         }
