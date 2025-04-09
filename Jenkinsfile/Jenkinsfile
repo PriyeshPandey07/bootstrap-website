@@ -14,7 +14,7 @@ pipeline {
         {
             steps {
                 script {
-                    sh "docker build -t bootimg:latest ."
+                    sh "docker build -t avengerimg:latest ."
                 }
             }
         }
@@ -22,7 +22,7 @@ pipeline {
         {
             steps {
                 script {
-                    sh "docker run -dit --name web -p 6000:80 bootimg:latest"
+                    sh "docker run -dit --name web -p 6000:80 avengerimg:latest"
                 }
             }
         }
