@@ -9,15 +9,6 @@ pipeline {
                 git url:'https://github.com/PriyeshPandey07/bootstrap-website.git', branch: 'main'
             }
         }
-    
-        stage("build image")
-        {
-            steps {
-                script {
-                    sh "docker build -t avengerimg:latest ."
-                }
-            }
-        }
         stage('Login to Docker Hub') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerpriyesh', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
@@ -27,6 +18,15 @@ pipeline {
                 }
             }
         }
+        stage("build image")
+        {
+            steps {
+                script {
+                    sh "docker build -t avengerimg:latest ."
+                }
+            }
+        }
+        
         stage("run container")
         {
             steps {
