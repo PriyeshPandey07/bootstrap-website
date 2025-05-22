@@ -22,7 +22,7 @@ pipeline {
         {
             steps {
                 script {
-                    sh "docker run -dit --name web -p 6000:80 avengerimg:latest"
+                    sh "docker run -dit --name web -p 8082:80 avengerimg:latest"
                 }
             }
         }
