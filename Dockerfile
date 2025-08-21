@@ -1,5 +1,4 @@
-# Use lightweight Nginx image
-FROM nginx:latest
+
 
 # Remove the default Nginx static content
 RUN rm -rf /usr/share/nginx/html/*
