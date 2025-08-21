@@ -1,0 +1,6 @@
+services: 
+   web: 
+    container_name: webserver
+    image: myphpimg:latest
+    ports: 
+     - 8082:80
