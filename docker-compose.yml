@@ -1,6 +1,6 @@
 services: 
    web: 
     container_name: bootweb
-    image: myphpimg:latest
+    image: avengerimg:latest
     ports: 
      - 8082:80
